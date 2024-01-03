@@ -1,0 +1,6 @@
+-- 코드를 입력하세요
+-- 테이블에서 상품 카테고리 코드(product_code 앞 2자리) 별 상품 개수를 출력하는 SQL문 작성
+SELECT SUBSTR(PRODUCT_CODE,1,2) AS CATEGORY, COUNT(PRODUCT_ID) AS PRODUCTS
+FROM PRODUCT 
+GROUP BY SUBSTR(PRODUCT_CODE,1,2)
+ORDER BY CATEGORY asc;
