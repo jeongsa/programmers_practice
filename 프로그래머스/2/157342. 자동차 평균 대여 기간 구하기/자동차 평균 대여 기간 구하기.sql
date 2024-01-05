@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+-- 테이블에서 평균 대여 기간이 7일 이상인 자동차들의 자동차 ID와 평균 대여기간 리스트 출력
+-- 평균 대여기간 소수점 두번째 자리에서 반올림
+SELECT CAR_ID, ROUND(AVG(END_DATE - START_DATE)+1,1) AS AVERAGE_DURATION
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+GROUP BY CAR_ID
+HAVING AVG(END_DATE - START_DATE)+1 >= 7
+ORDER BY AVERAGE_DURATION desc, CAR_ID desc;
