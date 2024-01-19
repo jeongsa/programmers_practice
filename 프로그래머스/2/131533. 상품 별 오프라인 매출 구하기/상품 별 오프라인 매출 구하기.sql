@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+-- product 테이블과 offline_sale 테이블에서 상품코드 별 매출액 합계를 출력하는 sql문 작성
+-- 매출액 내림차순, 상품코드 오름차순
+SELECT PRODUCT_CODE, SUM(PRICE*SALES_AMOUNT) AS SALES
+  FROM PRODUCT, OFFLINE_SALE
+ WHERE PRODUCT.PRODUCT_ID = OFFLINE_SALE.PRODUCT_ID
+GROUP BY PRODUCT_CODE
+ORDER BY SALES DESC, PRODUCT_CODE ASC;
